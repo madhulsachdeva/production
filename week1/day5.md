@@ -462,6 +462,10 @@ Let's test our containerized app before deploying to AWS.
 ```bash
 export $(cat .env | grep -v '^#' | xargs)
 ```
+** IF THE ABOVE COMMAND DOESNT WORK TRY:
+```bash
+export $(grep -v '^#' .env | grep -v '^$' | sed 's/^/export /' | xargs -0)
+```
 
 **Windows** (PowerShell):
 ```powershell
